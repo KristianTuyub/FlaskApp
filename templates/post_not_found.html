@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Error</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <a class="py-4" href="{{ url_for('main_page') }}">Go To Main Page</a>
+        <a class="py-4" href="{{ url_for('create_new_post') }}">Create a New Post</a>
+        <h1>Post Not Found :(</h1>
+        <h5>Post with ID: {{ post_id }} Not Found :(</h5>
+    </div>
+</body>
+</html>
