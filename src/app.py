@@ -6,7 +6,7 @@ Date: 2019-08-08
 
 import uuid
 
-from flask import Flask, render_template, jsonify, request, make_response, redirect, url_for
+from flask import Flask, render_template, jsonify, request, redirect, url_for
 # from flask_cors import CORS, cross_origin
 
 from RedisConnection import connection
@@ -14,7 +14,7 @@ from RedisDynamic import register_post_to_zset_ordered_by_votes, delete_post_on_
     get_posts_by_ranking
 
 app = Flask(__name__)
-app.config['CORS_HEADERS'] = 'Content-Type'
+# app.config['CORS_HEADERS'] = 'Content-Type'
 
 redis_server = connection()
 ZERO_STR = str(0)

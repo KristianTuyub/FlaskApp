@@ -11,8 +11,9 @@
 </head>
 <body class="pt-5">
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <img class="navbar-brand" src="https://metalmassacre.sirv.com/Images/logoredis.png?w=100&format=webp&webp.fallback=png&png.optimize=true" width="100" height="66" srcset="https://metalmassacre.sirv.com/Images/logoredis.png?w=100&format=webp&webp.fallback=png&png.optimize=true 1x, https://metalmassacre.sirv.com/Images/logoredis.png?w=200&format=webp&webp.fallback=png&png.optimize=true 2x" alt="" />
-
+        <a href="{{ url_for("main_page") }}" class="navbar-brand">
+            <img src="https://metalmassacre.sirv.com/Images/logoredis.png?h=60&format=webp&webp.fallback=png&png.optimize=true" width="90" height="60" srcset="https://metalmassacre.sirv.com/Images/logoredis.png?h=60&format=webp&webp.fallback=png&png.optimize=true 1x, https://metalmassacre.sirv.com/Images/logoredis.png?h=120&format=webp&webp.fallback=png&png.optimize=true 2x" alt="" />
+        </a>
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
@@ -33,7 +34,7 @@
     {% block body %}{% endblock %}
     <footer class="fixed-bottom text-light bg-dark">
         <div class="container pt-3">
-            <p><i class="fas fa-code"></i> Programmed by Christian Tuyub</p>
+            <p><i class="fas fa-code"></i> Code by Christian Tuyub</p>
             <p><i class="far fa-copyright"></i> Hyperbolic Baby 2015 - 2019</p>
         </div>
     </footer>
