@@ -1,3 +1,9 @@
+"""
+Executes the connection to the Redis Server
+Author: Christian Tuyub
+Date: 2019-08-08
+"""
+
 # step 1: import the redis-py client package
 import sys
 

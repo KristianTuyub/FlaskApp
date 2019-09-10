@@ -1,13 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Create a Post</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-</head>
-<body>
-    <div class="container">
-        <a class="py-4" href="{{ url_for('main_page') }}">Go To Main Page</a>
+{% extends "base_layout.html" %}
+{% block title %} Create a New Post {% endblock %}
+{% block head %}
+ {{ super() }}
+{% endblock %}
+
+{% block body %}
+    <div class="container pt-5">
         <h1>Enter a new Reddit Post!</h1>
         <form method="post">
             <div class="form-group">
@@ -30,9 +28,4 @@
             <button type="submit" class="btn btn-primary">Submit New Post</button>
         </form>
     </div>
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-</body>
-</html>
+{% endblock %}

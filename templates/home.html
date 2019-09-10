@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
-  <meta charset="UTF-8">
-  <title>Home - Redis / Python / Flask - Practice </title>
+    <meta charset="UTF-8">
+    <title>Home - Redis / Python / Flask - Practice </title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" rel="stylesheet" id="bootstrap-css">
 </head>
@@ -20,13 +21,14 @@
         <a class="nav-link" href="/">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="https://github.com/KristianTuyub/RedisRedditCopyCat">Github Repo</a>
+        <a class="nav-link" href="{{ github_repo }}">Github Repo</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">More?</a>
         <div class="dropdown-menu" aria-labelledby="dropdown01">
-          <a class="dropdown-item" href="#">Nothing in my pockets, </a>
-          <a class="dropdown-item" href="#">nothing up my sleeves.</a>
+            <a class="dropdown-item" href="#">Nothing in my pockets, </a>
+            <a class="dropdown-item" href="#">nothing up my sleeves.</a>
+            <a href="{{ url_for('get_posts_html') }}" class="dropdown-item">Client</a>
         </div>
       </li>
     </ul>
@@ -77,8 +79,8 @@
           <div class="col-10">
             <div class="tab-content" id="nav-tabContent">
               <div class="tab-pane fade show active" id="list-get" role="tabpanel" aria-labelledby="list-get-list">
-                  <p><a href="{{ url_for('get_posts') }}"class="badge badge-secondary">/posts</a> Get all posts stored on DB</p>
-                  <p><span class="badge badge-secondary">/r/&lt;community&gt;/&lt;post_id&gt;</span> Get a post stored on DB, if it exists. (Example: /r/uady_community/post:968658748)</p>
+                  <p><a href="{{ url_for('get_posts') }}"class="badge badge-secondary">/api/posts</a> Get all posts stored on DB</p>
+                  <p><span class="badge badge-secondary">/api/r/&lt;community&gt;/&lt;post_id&gt;</span> Get a post stored on DB, if it exists. (Example: /r/uady_community/post:968658748)</p>
               </div>
               <div class="tab-pane fade" id="list-post" role="tabpanel" aria-labelledby="list-post-list">
                   <p><a href="{{ url_for('create_new_post') }}" class="badge badge-secondary">/create_new_post</a> Actually, it's a built-in service that sends you a form to create a new post</p>
@@ -100,8 +102,8 @@
 </main>
 
     <footer class="container">
-        <p><i class="far fa-copyright"></i> Hyperbolic Baby 2015-2019</p>
         <p><i class="fas fa-code"></i> Programmed by Christian Tuyub</p>
+        <p><i class="far fa-copyright"></i> Hyperbolic Baby 2015-2019</p>
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>

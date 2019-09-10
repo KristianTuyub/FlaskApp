@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block head %}
+        <title>{% block title %}{% endblock %}</title>
+    {% endblock %}
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" rel="stylesheet" id="bootstrap-css">
+</head>
+<body class="pt-5">
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <img class="navbar-brand" src="https://metalmassacre.sirv.com/Images/logoredis.png?w=100&format=webp&webp.fallback=png&png.optimize=true" width="100" height="66" srcset="https://metalmassacre.sirv.com/Images/logoredis.png?w=100&format=webp&webp.fallback=png&png.optimize=true 1x, https://metalmassacre.sirv.com/Images/logoredis.png?w=200&format=webp&webp.fallback=png&png.optimize=true 2x" alt="" />
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a href="{{ url_for('main_page') }}" class="nav-link">API</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('get_posts_html') }}">Posts</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="https://github.com/KristianTuyub/RedditCopyCat">Github Repo</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ url_for('create_new_post') }}" class="nav-link">Create a New Post</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    {% block body %}{% endblock %}
+    <footer class="fixed-bottom text-light bg-dark">
+        <div class="container pt-3">
+            <p><i class="fas fa-code"></i> Programmed by Christian Tuyub</p>
+            <p><i class="far fa-copyright"></i> Hyperbolic Baby 2015 - 2019</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" ></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

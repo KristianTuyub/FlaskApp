@@ -1,0 +1,29 @@
+{% extends "base_layout.html" %}
+{% block title %} Read Post {% endblock %}
+{% block head %}
+ {{ super() }}
+{% endblock %}
+
+{% block body %}
+    <div class="container pt-5">
+        <div class="card my-3">
+            <div class="row no-gutters">
+                <div class="col-md-1 text-center">
+                    <form action="{{ post[0]["add_vote"] }}" method="post">
+                        <a href="{{ post[0]["add_vote"] }}" style='font-size:30px; text-decoration: none;'><i class="fas fa-caret-up"></i></a>
+                            <h4 class="pt-2">{{ post[0]["votes"] }}</h4>
+                        <a href="{{ post[0]["remove_vote"] }}" style='font-size:35px; text-decoration: none;'><i class="fas fa-caret-down"></i></a>
+                    </form>
+                </div>
+                <div class="col-md-11">
+                    <div class="card-body">
+                        <i class="fab fa-reddit-alien"></i>
+                        {{ post[0]["community"] }} | <small class="text-muted">Posted by u/{{ post[0]["author"] }}</small>
+                        <h4>{{ post[0]["title"] }}</h4>
+                        <h6>{{ post[0]["description"]}}</h6><p class="text-right"><small><a href="{{ post[0]["delete_url"] }}">Delete Post</a></small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

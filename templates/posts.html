@@ -1,0 +1,60 @@
+{% extends "base_layout.html" %}
+{% block title %} Posts {% endblock %}
+{% block head %}
+ {{ super() }}
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 py-5" id="app">
+            {% for post in posts %}
+                <div class="card my-3">
+                    <div class="row no-gutters">
+                        <div class="col-md-1 text-center">
+                            <form method="post">
+                                <a href="{{ post.add_vote }}" style='font-size:30px; text-decoration: none;'><i class="fas fa-caret-up"></i></a>
+                                    <h4 class="pt-2">{{ post.votes }}</h4>
+                                <a href="{{ post.remove_vote }}" style='font-size:35px; text-decoration: none;'><i class="fas fa-caret-down"></i></a>
+                            </form>
+                        </div>
+                        <div class="col-md-11">
+                            <div class="card-body">
+                                <i class="fab fa-reddit-alien"></i>
+                                {{ post.community }} | <small class="text-muted">Posted by u/{{ post.author }}</small>
+                                <h4>{{ post.title }}</h4>
+                                <h6>{{ post.description|truncate(300, True)}}</h6> <small><a href="{{ post.url }}" style="text-decoration: none;">Read More...</a></small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+        <div class="col-md-4 py-5">
+
+            <div class="card text-white bg-dark mb-3" style="max-width: 22rem;">
+                <div class="card-header text-center">Posts Ranked by Votes</div>
+                    <div class="card-body">
+                        {% for post_id, votes, post_url, post_title in posts_sorted_by_votes %}
+                            <div class="row">
+                                <div class="col-10">
+                                    <small class="card-text"><a href="{{ post_url }}" style="text-decoration: none">{{ post_title|truncate(40, True) }}</a></small>
+                                </div>
+                                <div class="col-2">
+                                    <span class="badge badge-light">{{ votes }}</span>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row pt-5">
+
+    </div>
+</div>
+
+{% endblock %}
