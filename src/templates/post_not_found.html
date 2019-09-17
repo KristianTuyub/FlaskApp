@@ -5,10 +5,9 @@
 {% endblock %}
 
 {% block body %}
-    <div class="container pt-5">
-        <a class="py-4" href="{{ url_for('get_posts_html') }}">Go To Main Page</a>
-        <a class="py-4" href="{{ url_for('create_new_post') }}">Create a New Post</a>
+    <div class="container pt-5 text-center">
         <h1>Post Not Found :(</h1>
         <h5>Post with ID: {{ post_id }} Not Found :(</h5>
+        <a class="py-4" href="{{ url_for('get_posts_html') }}" style="text-decoration: none">Go To Main Page</a>
     </div>
 {% endblock %}
